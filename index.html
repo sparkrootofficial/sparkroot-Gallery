@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sparkroot Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+        <div class="brand">
+            <div class="brand-logo">S</div>
+            <span>Sparkroot</span>
+        </div>
+
+        <div class="nav-links">
+
+            <button class="nav-btn active" id="galleryNavBtn">
+                🖼️ <span>Gallery</span>
+            </button>
+
+            <button class="nav-btn" id="favoritesNavBtn">
+                ❤️ <span>Favorites</span>
+                <small id="favoriteBadge">0</small>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- ================= UPLOAD SECTION ================= -->
+
+        <section class="upload-section">
+
+            <div class="upload-header">
+                <div>
+                    <p class="small-label">SPARKROOT GALLERY</p>
+                    <h1>Save your visual ideas.</h1>
+                    <p class="subtitle">
+                        Upload one or multiple images and keep them organized.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    +
+                </div>
+
+                <h2>Add New Images</h2>
+
+                <p>
+                    Select one or multiple images from your computer.
+                </p>
+
+                <label for="imageInput" class="upload-button">
+                    Choose Images
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    multiple
+                    hidden
+                >
+
+            </div>
+
+
+            <!-- Selected images -->
+            <div id="selectedPreview" class="selected-preview"></div>
+
+
+            <!-- Post information -->
+            <div class="post-form" id="postForm">
+
+                <div class="form-group">
+                    <label>Title</label>
+
+                    <input
+                        type="text"
+                        id="titleInput"
+                        placeholder="Example: Website Inspiration"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Caption</label>
+
+                    <input
+                        type="text"
+                        id="captionInput"
+                        placeholder="Write a short caption..."
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Description</label>
+
+                    <textarea
+                        id="descriptionInput"
+                        placeholder="Write something about these images..."
+                    ></textarea>
+                </div>
+
+
+                <button id="savePostBtn" class="save-button">
+                    Add To Gallery
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GALLERY ================= -->
+
+        <section id="gallerySection" class="content-section active-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-label">YOUR COLLECTION</p>
+                    <h2>Gallery</h2>
+                </div>
+
+                <div id="galleryCount" class="count-text">
+                    0 images
+                </div>
+
+            </div>
+
+
+            <div id="galleryGrid" class="gallery-grid"></div>
+
+
+            <div id="galleryEmpty" class="empty-state">
+
+                <div class="empty-icon">
+                    🖼️
+                </div>
+
+                <h3>Your gallery is empty</h3>
+
+                <p>
+                    Upload your first image above.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FAVORITES ================= -->
+
+        <section id="favoritesSection" class="content-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-label">SAVED COLLECTION</p>
+                    <h2>Favorites</h2>
+                </div>
+
+                <div id="favoritesCount" class="count-text">
+                    0 images
+                </div>
+
+            </div>
+
+
+            <div id="favoritesGrid" class="gallery-grid"></div>
+
+
+            <div id="favoritesEmpty" class="empty-state">
+
+                <div class="empty-icon">
+                    ❤️
+                </div>
+
+                <h3>No favorites yet</h3>
+
+                <p>
+                    Click the heart on an image to save it here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= IMAGE VIEWER ================= -->
+
+    <div id="viewer" class="viewer">
+
+        <div class="viewer-overlay"></div>
+
+        <div class="viewer-content">
+
+            <button id="viewerClose" class="viewer-close">
+                ×
+            </button>
+
+            <button id="viewerPrev" class="viewer-arrow viewer-prev">
+                ‹
+            </button>
+
+            <img id="viewerImage" src="" alt="">
+
+            <button id="viewerNext" class="viewer-arrow viewer-next">
+                ›
+            </button>
+
+
+            <div class="viewer-info">
+
+                <h2 id="viewerTitle"></h2>
+
+                <p id="viewerCaption"></p>
+
+                <p id="viewerDescription"></p>
+
+                <div id="viewerCounter" class="viewer-counter"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
