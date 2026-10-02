@@ -1,1 +1,0 @@
-# sparkroot-Gallery
