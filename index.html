@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SparkRoot — Premium Product Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Galaxy Background -->
+    <div class="galaxy-bg">
+        <div class="stars stars-1"></div>
+        <div class="stars stars-2"></div>
+        <div class="stars stars-3"></div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#" class="brand" data-page="home">
+                <span class="brand-spark">✦</span>
+                <span>SparkRoot</span>
+            </a>
+
+            <nav class="desktop-nav">
+
+                <button class="nav-link active" data-page="home">
+                    Home
+                </button>
+
+                <button class="nav-link" data-page="gallery">
+                    Gallery
+                </button>
+
+                <button class="nav-link" data-page="favorites">
+                    Favorites
+                </button>
+
+            </nav>
+
+            <!-- CENTER SEARCH -->
+            <div class="nav-search">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    class="search-clear"
+                    id="clearSearch"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <button data-page="home">
+                Home
+            </button>
+
+            <button data-page="gallery">
+                Gallery
+            </button>
+
+            <button data-page="favorites">
+                Favorites
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+
+        <!-- ================= HOME PAGE ================= -->
+
+        <section class="page active-page" id="homePage">
+
+            <div class="hero-card">
+
+                <div class="hero-content">
+
+                    <div class="premium-badge">
+                        ✦ PREMIUM GALLERY
+                    </div>
+
+                    <h1>
+                        Premium Products Gallery
+                    </h1>
+
+                    <h2>
+                        Your Products in the Gallery
+                    </h2>
+
+                    <p>
+                        Manage your products, price, stock, category,
+                        size, color and description in one beautiful
+                        premium gallery.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="openGalleryBtn"
+                        >
+                            Open Gallery
+                            <span>→</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="addProductBtn"
+                        >
+                            + Add Product
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◈
+                    </div>
+
+                    <div>
+                        <span>Total Products</span>
+                        <strong id="totalProducts">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ♡
+                    </div>
+
+                    <div>
+                        <span>Favorites</span>
+                        <strong id="totalFavorites">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◫
+                    </div>
+
+                    <div>
+                        <span>Total Stock</span>
+                        <strong id="totalStock">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CATEGORIES ================= -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>Categories</h2>
+                </div>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <button class="category-card" data-category="Electronics">
+                    <span>⌁</span>
+                    Electronics
+                </button>
+
+                <button class="category-card" data-category="Fashion">
+                    <span>◇</span>
+                    Fashion
+                </button>
+
+                <button class="category-card" data-category="Jewelry">
+                    <span>✧</span>
+                    Jewelry
+                </button>
+
+                <button class="category-card" data-category="Cosmetics">
+                    <span>✿</span>
+                    Cosmetics
+                </button>
+
+                <button class="category-card" data-category="Bags">
+                    <span>▱</span>
+                    Bags
+                </button>
+
+                <button class="category-card" data-category="Menswear">
+                    <span>◉</span>
+                    Menswear
+                </button>
+
+                <button class="category-card" data-category="Womenswear">
+                    <span>◌</span>
+                    Womenswear
+                </button>
+
+                <button class="category-card" data-category="Home and Living">
+                    <span>⌂</span>
+                    Home & Living
+                </button>
+
+                <button class="category-card" data-category="Toys">
+                    <span>☆</span>
+                    Toys
+                </button>
+
+                <button class="category-card" data-category="Other">
+                    <span>+</span>
+                    Other
+                </button>
+
+            </div>
+
+
+            <!-- ================= RECENT PRODUCTS ================= -->
+
+            <div class="section-heading products-heading">
+
+                <div>
+                    <span class="section-label">
+                        COLLECTION
+                    </span>
+
+                    <h2>Recent Products</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="viewAllBtn"
+                >
+                    View All →
+                </button>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="homeProductGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="homeEmptyState"
+            >
+
+                <div class="empty-icon">
+                    ✦
+                </div>
+
+                <h3>No Products Yet</h3>
+
+                <p>
+                    Add your first product and build your
+                    SparkRoot collection.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="emptyAddProductBtn"
+                >
+                    + Add Your First Product
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GALLERY PAGE ================= -->
+
+        <section class="page" id="galleryPage">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="section-label">
+                        SPARKROOT
+                    </span>
+
+                    <h1>Product Gallery</h1>
+
+                    <p>
+                        Explore and manage your complete product collection.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="galleryAddProductBtn"
+                >
+                    + Add Product
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-wrapper">
+
+                <button
+                    type="button"
+                    class="filter-btn active"
+                    data-filter="All"
+                >
+                    All
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Electronics">
+                    Electronics
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Fashion">
+                    Fashion
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Jewelry">
+                    Jewelry
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Cosmetics">
+                    Cosmetics
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Bags">
+                    Bags
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Menswear">
+                    Menswear
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Womenswear">
+                    Womenswear
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Home and Living">
+                    Home & Living
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Toys">
+                    Toys
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="Other">
+                    Other
+                </button>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="galleryProductGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="galleryEmptyState"
+            >
+
+                <div class="empty-icon">
+                    ✦
+                </div>
+
+                <h3>No Products Found</h3>
+
+                <p>
+                    Try another category or add a new product.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="galleryEmptyAddBtn"
+                >
+                    + Add Product
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FAVORITES PAGE ================= -->
+
+        <section class="page" id="favoritesPage">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="section-label">
+                        YOUR COLLECTION
+                    </span>
+
+                    <h1>Favorite Products</h1>
+
+                    <p>
+                        Products you've marked as favorites.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="favoriteProductGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="favoriteEmptyState"
+            >
+
+                <div class="empty-icon">
+                    ♡
+                </div>
+
+                <h3>No Favorites Yet</h3>
+
+                <p>
+                    Click the heart icon on any product
+                    to add it here.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="favoriteGoGalleryBtn"
+                >
+                    Open Gallery →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- ADD / EDIT PRODUCT MODAL -->
+    <!-- ================================================= -->
+
+    <div
+        class="modal"
+        id="productModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-modal></div>
+
+        <div class="modal-box product-modal-box">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-label">
+                        SPARKROOT
+                    </span>
+
+                    <h2 id="modalTitle">
+                        Add Product
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeProductModal"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="productForm">
+
+                <!-- IMAGE UPLOAD -->
+
+                <div class="form-group">
+
+                    <label>
+                        Product Images
+                        <span>*</span>
+                    </label>
+
+                    <label
+                        class="upload-box"
+                        for="productImages"
+                    >
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <strong>
+                            Click to upload images
+                        </strong>
+
+                        <small>
+                            You can select multiple images
+                        </small>
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImages"
+                        accept="image/jpeg,image/png,image/webp,image/gif"
+                        multiple
+                        hidden
+                    >
+
+                    <div
+                        class="image-preview"
+                        id="imagePreview"
+                    ></div>
+
+                    <small
+                        class="form-help"
+                        id="imageHelp"
+                    >
+                        At least one image is required.
+                    </small>
+
+                </div>
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="form-group">
+
+                    <label for="productName">
+                        Product Name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PRICE + STOCK -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productPrice">
+                            Price <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            placeholder="0"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productStock">
+                            Stock <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            placeholder="0"
+                            min="0"
+                            step="1"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category <span>*</span>
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Jewelry">
+                            Jewelry
+                        </option>
+
+                        <option value="Cosmetics">
+                            Cosmetics
+                        </option>
+
+                        <option value="Bags">
+                            Bags
+                        </option>
+
+                        <option value="Menswear">
+                            Menswear
+                        </option>
+
+                        <option value="Womenswear">
+                            Womenswear
+                        </option>
+
+                        <option value="Home and Living">
+                            Home and Living
+                        </option>
+
+                        <option value="Toys">
+                            Toys
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SIZE + COLOR -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productSize">
+                            Size
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productSize"
+                            placeholder="e.g. S, M, L"
+                            maxlength="50"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productColor">
+                            Color
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productColor"
+                            placeholder="e.g. Black"
+                            maxlength="50"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="Write product description..."
+                        rows="5"
+                        maxlength="1000"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelProductBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="saveProductBtn"
+                    >
+                        Save Product
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- IMAGE VIEWER -->
+    <!-- ================================================= -->
+
+    <div
+        class="image-viewer"
+        id="imageViewer"
+        aria-hidden="true"
+    >
+
+        <button
+            type="button"
+            class="viewer-close"
+            id="viewerClose"
+        >
+            ×
+        </button>
+
+        <button
+            type="button"
+            class="viewer-arrow viewer-prev"
+            id="viewerPrev"
+            aria-label="Previous image"
+        >
+            ‹
+        </button>
+
+        <img
+            id="viewerImage"
+            src=""
+            alt="Product image"
+        >
+
+        <button
+            type="button"
+            class="viewer-arrow viewer-next"
+            id="viewerNext"
+            aria-label="Next image"
+        >
+            ›
+        </button>
+
+        <div
+            class="viewer-counter"
+            id="viewerCounter"
+        >
+            1 / 1
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- PRODUCT DETAILS MODAL -->
+    <!-- ================================================= -->
+
+    <div
+        class="modal"
+        id="detailsModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-details></div>
+
+        <div class="modal-box details-modal-box">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeDetailsModal"
+            >
+                ×
+            </button>
+
+            <div id="productDetailsContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
